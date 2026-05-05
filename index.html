@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Colour Wardrobe by Geet | The Wenlock Wardrobe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --champagne: #f5ede0;
+    --blush: #e8c9b8;
+    --rose: #c9897a;
+    --deep: #2c1f1a;
+    --forest: #3b4a3f;
+    --gold: #b8965a;
+    --cream: #faf6f0;
+    --muted: #8a7068;
+    --white: #ffffff;
+  }
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+font-family: ‘Jost’, sans-serif;
+background: var(–cream);
+color: var(–deep);
+overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+display: flex; align-items: center; justify-content: space-between;
+padding: 1.2rem 3rem;
+background: rgba(250,246,240,0.92);
+backdrop-filter: blur(12px);
+border-bottom: 1px solid rgba(184,150,90,0.2);
+}
+
+.nav-logo {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 1.1rem;
+font-weight: 300;
+letter-spacing: 0.18em;
+color: var(–deep);
+text-decoration: none;
+line-height: 1.3;
+}
+
+.nav-logo span {
+display: block;
+font-size: 0.6rem;
+letter-spacing: 0.35em;
+color: var(–gold);
+font-family: ‘Jost’, sans-serif;
+font-weight: 400;
+text-transform: uppercase;
+}
+
+.nav-links {
+display: flex; gap: 2.2rem; list-style: none;
+}
+
+.nav-links a {
+font-family: ‘Jost’, sans-serif;
+font-size: 0.7rem;
+font-weight: 400;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+color: var(–deep);
+text-decoration: none;
+transition: color 0.3s;
+}
+
+.nav-links a:hover { color: var(–gold); }
+
+.nav-cta {
+background: var(–deep);
+color: var(–champagne) !important;
+padding: 0.6rem 1.4rem;
+border-radius: 0;
+}
+
+.nav-cta:hover { background: var(–gold); color: var(–white) !important; }
+
+/* ── HERO ── */
+.hero {
+min-height: 100vh;
+display: grid;
+grid-template-columns: 1fr 1fr;
+padding-top: 80px;
+position: relative;
+overflow: hidden;
+}
+
+.hero-left {
+background: var(–forest);
+display: flex; flex-direction: column;
+justify-content: center;
+padding: 5rem 4rem 5rem 5rem;
+position: relative;
+animation: fadeSlideIn 1s ease both;
+}
+
+.hero-left::after {
+content: ‘’;
+position: absolute; right: -1px; top: 0; bottom: 0; width: 2px;
+background: var(–gold);
+}
+
+.hero-eyebrow {
+font-family: ‘Jost’, sans-serif;
+font-size: 0.65rem;
+letter-spacing: 0.4em;
+text-transform: uppercase;
+color: var(–gold);
+margin-bottom: 1.5rem;
+}
+
+.hero-title {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: clamp(3rem, 5vw, 4.5rem);
+font-weight: 300;
+line-height: 1.1;
+color: var(–champagne);
+margin-bottom: 1.8rem;
+}
+
+.hero-title em {
+font-style: italic;
+color: var(–blush);
+}
+
+.hero-desc {
+font-size: 0.9rem;
+font-weight: 300;
+line-height: 1.9;
+color: rgba(245,237,224,0.75);
+max-width: 400px;
+margin-bottom: 2.5rem;
+}
+
+.hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+.btn-primary {
+display: inline-block;
+background: var(–gold);
+color: var(–white);
+padding: 0.9rem 2rem;
+font-family: ‘Jost’, sans-serif;
+font-size: 0.7rem;
+font-weight: 500;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+text-decoration: none;
+transition: all 0.3s;
+}
+
+.btn-primary:hover { background: var(–rose); transform: translateY(-2px); }
+
+.btn-outline {
+display: inline-block;
+border: 1px solid rgba(245,237,224,0.4);
+color: var(–champagne);
+padding: 0.9rem 2rem;
+font-family: ‘Jost’, sans-serif;
+font-size: 0.7rem;
+font-weight: 400;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+text-decoration: none;
+transition: all 0.3s;
+}
+
+.btn-outline:hover { border-color: var(–gold); color: var(–gold); }
+
+.hero-right {
+background: var(–champagne);
+display: flex; flex-direction: column;
+justify-content: flex-end;
+padding: 4rem;
+position: relative;
+animation: fadeSlideIn 1.2s ease both;
+}
+
+.hero-right-pattern {
+position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+background-image:
+radial-gradient(circle at 20% 20%, rgba(184,150,90,0.08) 0%, transparent 50%),
+radial-gradient(circle at 80% 80%, rgba(201,137,122,0.1) 0%, transparent 50%);
+}
+
+.hero-stat-group {
+position: relative; z-index: 2;
+display: grid; grid-template-columns: 1fr 1fr;
+gap: 2rem;
+}
+
+.hero-stat {
+border-top: 1px solid var(–gold);
+padding-top: 1.2rem;
+}
+
+.hero-stat-num {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 2.5rem;
+font-weight: 300;
+color: var(–deep);
+line-height: 1;
+}
+
+.hero-stat-label {
+font-size: 0.65rem;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+color: var(–muted);
+margin-top: 0.4rem;
+}
+
+.hero-shop-name {
+position: relative; z-index: 2;
+font-family: ‘Cormorant Garamond’, serif;
+font-size: clamp(4rem, 8vw, 7rem);
+font-weight: 300;
+font-style: italic;
+color: var(–deep);
+opacity: 0.07;
+line-height: 1;
+position: absolute;
+top: 2rem; left: 3rem; right: 0;
+}
+
+/* ── SECTION SHARED ── */
+section { padding: 6rem 0; }
+
+.container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 3rem;
+}
+
+.section-label {
+font-size: 0.65rem;
+letter-spacing: 0.4em;
+text-transform: uppercase;
+color: var(–gold);
+margin-bottom: 1rem;
+}
+
+.section-title {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: clamp(2.2rem, 4vw, 3.2rem);
+font-weight: 300;
+line-height: 1.2;
+color: var(–deep);
+}
+
+.section-title em { font-style: italic; color: var(–rose); }
+
+/* ── ABOUT ── */
+#about {
+background: var(–white);
+}
+
+.about-grid {
+display: grid;
+grid-template-columns: 1fr 1.4fr;
+gap: 6rem;
+align-items: center;
+}
+
+.about-image-frame {
+position: relative;
+}
+
+.about-image-placeholder {
+width: 100%;
+aspect-ratio: 3/4;
+background: linear-gradient(135deg, var(–champagne) 0%, var(–blush) 100%);
+display: flex; align-items: center; justify-content: center;
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 1rem;
+font-style: italic;
+color: var(–muted);
+letter-spacing: 0.05em;
+text-align: center;
+padding: 2rem;
+}
+
+.about-image-frame::before {
+content: ‘’;
+position: absolute;
+top: -1.5rem; left: -1.5rem;
+right: 1.5rem; bottom: 1.5rem;
+border: 1px solid var(–gold);
+z-index: 0;
+}
+
+.about-image-placeholder { position: relative; z-index: 1; }
+
+.about-badge {
+position: absolute;
+bottom: -1rem; right: -1rem;
+background: var(–deep);
+color: var(–champagne);
+padding: 1.2rem 1.5rem;
+z-index: 2;
+text-align: center;
+}
+
+.about-badge-num {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 2rem;
+font-weight: 300;
+display: block;
+}
+
+.about-badge-text {
+font-size: 0.6rem;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+color: var(–gold);
+}
+
+.about-text p {
+font-size: 0.95rem;
+font-weight: 300;
+line-height: 1.9;
+color: var(–muted);
+margin-bottom: 1.2rem;
+}
+
+.about-text p strong {
+color: var(–deep);
+font-weight: 400;
+}
+
+.about-tags {
+display: flex; flex-wrap: wrap; gap: 0.6rem;
+margin-top: 1.8rem;
+}
+
+.tag {
+display: inline-block;
+border: 1px solid var(–blush);
+color: var(–rose);
+padding: 0.35rem 0.9rem;
+font-size: 0.65rem;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+}
+
+/* ── SERVICES ── */
+#services {
+background: var(–cream);
+}
+
+.services-header {
+display: flex;
+justify-content: space-between;
+align-items: flex-end;
+margin-bottom: 4rem;
+}
+
+.services-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 1.5px;
+background: var(–blush);
+}
+
+.service-card {
+background: var(–white);
+padding: 3rem;
+position: relative;
+overflow: hidden;
+transition: all 0.4s ease;
+cursor: default;
+}
+
+.service-card::before {
+content: ‘’;
+position: absolute;
+bottom: 0; left: 0; right: 0; height: 3px;
+background: var(–gold);
+transform: scaleX(0);
+transition: transform 0.4s ease;
+}
+
+.service-card:hover::before { transform: scaleX(1); }
+.service-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(44,31,26,0.08); }
+
+.service-number {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 4rem;
+font-weight: 300;
+color: var(–champagne);
+line-height: 1;
+margin-bottom: 1rem;
+}
+
+.service-icon {
+font-size: 1.8rem;
+margin-bottom: 1rem;
+}
+
+.service-name {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 1.6rem;
+font-weight: 400;
+color: var(–deep);
+margin-bottom: 0.4rem;
+}
+
+.service-tagline {
+font-size: 0.65rem;
+letter-spacing: 0.25em;
+text-transform: uppercase;
+color: var(–gold);
+margin-bottom: 1.2rem;
+}
+
+.service-desc {
+font-size: 0.88rem;
+font-weight: 300;
+line-height: 1.85;
+color: var(–muted);
+margin-bottom: 1.5rem;
+}
+
+.service-includes {
+list-style: none;
+margin-bottom: 1.8rem;
+}
+
+.service-includes li {
+font-size: 0.78rem;
+color: var(–deep);
+padding: 0.3rem 0;
+padding-left: 1rem;
+position: relative;
+font-weight: 300;
+}
+
+.service-includes li::before {
+content: ‘—’;
+position: absolute; left: 0;
+color: var(–gold);
+font-size: 0.7rem;
+}
+
+.service-link {
+display: inline-flex;
+align-items: center;
+gap: 0.5rem;
+font-size: 0.7rem;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+color: var(–deep);
+text-decoration: none;
+font-weight: 500;
+transition: color 0.3s;
+}
+
+.service-link:hover { color: var(–gold); }
+
+.service-link::after {
+content: ‘→’;
+transition: transform 0.3s;
+}
+
+.service-link:hover::after { transform: translateX(4px); }
+
+/* Featured service — full width */
+.service-card.featured {
+grid-column: 1 / -1;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 4rem;
+align-items: center;
+background: var(–forest);
+}
+
+.service-card.featured .service-number,
+.service-card.featured .service-name { color: var(–champagne); }
+
+.service-card.featured .service-desc { color: rgba(245,237,224,0.7); }
+
+.service-card.featured .service-includes li { color: var(–champagne); }
+
+.service-card.featured .service-link { color: var(–gold); }
+
+.featured-right {
+border-left: 1px solid rgba(184,150,90,0.3);
+padding-left: 4rem;
+}
+
+.featured-right p {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 1.5rem;
+font-style: italic;
+font-weight: 300;
+color: var(–champagne);
+line-height: 1.6;
+margin-bottom: 1.5rem;
+}
+
+.featured-detail {
+font-size: 0.8rem;
+font-weight: 300;
+color: rgba(245,237,224,0.65);
+line-height: 1.8;
+}
+
+/* ── CATALOGUE ── */
+#catalogue {
+background: var(–white);
+}
+
+.catalogue-header {
+text-align: center;
+margin-bottom: 3rem;
+}
+
+.catalogue-note {
+display: inline-block;
+background: var(–champagne);
+border: 1px solid var(–blush);
+padding: 0.6rem 1.5rem;
+font-size: 0.72rem;
+letter-spacing: 0.15em;
+color: var(–muted);
+margin-top: 1rem;
+}
+
+.catalogue-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 1.5rem;
+margin-top: 2.5rem;
+}
+
+.catalogue-item {
+position: relative;
+overflow: hidden;
+background: var(–champagne);
+cursor: pointer;
+}
+
+.catalogue-item-img {
+width: 100%;
+aspect-ratio: 3/4;
+background: linear-gradient(160deg, var(–blush) 0%, var(–champagne) 100%);
+display: flex; align-items: center; justify-content: center;
+font-family: ‘Cormorant Garamond’, serif;
+font-style: italic;
+color: var(–muted);
+font-size: 0.9rem;
+transition: transform 0.5s ease;
+}
+
+.catalogue-item:hover .catalogue-item-img { transform: scale(1.04); }
+
+.catalogue-item-info {
+padding: 1.2rem 1.4rem;
+background: var(–white);
+border-top: 1px solid var(–blush);
+}
+
+.catalogue-item-name {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 1.1rem;
+color: var(–deep);
+margin-bottom: 0.2rem;
+}
+
+.catalogue-item-detail {
+font-size: 0.72rem;
+color: var(–muted);
+margin-bottom: 0.8rem;
+letter-spacing: 0.05em;
+}
+
+.catalogue-enquire {
+display: inline-block;
+background: transparent;
+border: 1px solid var(–deep);
+color: var(–deep);
+padding: 0.45rem 1rem;
+font-size: 0.65rem;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+cursor: pointer;
+font-family: ‘Jost’, sans-serif;
+transition: all 0.3s;
+width: 100%;
+text-align: center;
+}
+
+.catalogue-enquire:hover {
+background: var(–deep);
+color: var(–champagne);
+}
+
+/* ── BOOKING / CONTACT ── */
+#booking {
+background: var(–deep);
+position: relative;
+overflow: hidden;
+}
+
+#booking::before {
+content: ‘’;
+position: absolute;
+top: -50%; right: -20%;
+width: 600px; height: 600px;
+border-radius: 50%;
+background: radial-gradient(circle, rgba(184,150,90,0.08) 0%, transparent 70%);
+}
+
+.booking-grid {
+display: grid;
+grid-template-columns: 1fr 1.2fr;
+gap: 6rem;
+align-items: start;
+position: relative; z-index: 1;
+}
+
+.booking-left .section-title { color: var(–champagne); }
+.booking-left .section-label { color: var(–gold); }
+
+.booking-left p {
+font-size: 0.9rem;
+font-weight: 300;
+line-height: 1.9;
+color: rgba(245,237,224,0.65);
+margin-top: 1.5rem;
+}
+
+.contact-info {
+margin-top: 2.5rem;
+display: flex; flex-direction: column; gap: 1rem;
+}
+
+.contact-row {
+display: flex; align-items: center; gap: 1rem;
+font-size: 0.85rem;
+color: var(–champagne);
+font-weight: 300;
+}
+
+.contact-row-label {
+font-size: 0.6rem;
+letter-spacing: 0.25em;
+text-transform: uppercase;
+color: var(–gold);
+min-width: 70px;
+}
+
+.booking-form {
+display: flex; flex-direction: column; gap: 1rem;
+}
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+
+.form-group label {
+font-size: 0.62rem;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+color: var(–gold);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+background: rgba(255,255,255,0.06);
+border: 1px solid rgba(184,150,90,0.25);
+color: var(–champagne);
+padding: 0.9rem 1rem;
+font-family: ‘Jost’, sans-serif;
+font-size: 0.85rem;
+font-weight: 300;
+outline: none;
+transition: border-color 0.3s;
+width: 100%;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+border-color: var(–gold);
+}
+
+.form-group select option { background: var(–deep); }
+
+.form-group textarea { height: 110px; resize: vertical; }
+
+.form-submit {
+background: var(–gold);
+color: var(–white);
+border: none;
+padding: 1rem 2rem;
+font-family: ‘Jost’, sans-serif;
+font-size: 0.72rem;
+letter-spacing: 0.25em;
+text-transform: uppercase;
+font-weight: 500;
+cursor: pointer;
+transition: all 0.3s;
+align-self: flex-start;
+margin-top: 0.5rem;
+}
+
+.form-submit:hover { background: var(–rose); transform: translateY(-2px); }
+
+/* ── FOOTER ── */
+footer {
+background: #1a110e;
+padding: 3rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+flex-wrap: wrap;
+gap: 1.5rem;
+}
+
+.footer-logo {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 1.1rem;
+font-weight: 300;
+letter-spacing: 0.15em;
+color: var(–champagne);
+}
+
+.footer-logo span {
+display: block;
+font-size: 0.6rem;
+letter-spacing: 0.35em;
+color: var(–gold);
+font-family: ‘Jost’, sans-serif;
+text-transform: uppercase;
+margin-top: 0.2rem;
+}
+
+.footer-links {
+display: flex; gap: 2rem; list-style: none;
+}
+
+.footer-links a {
+font-size: 0.68rem;
+letter-spacing: 0.15em;
+text-transform: uppercase;
+color: rgba(245,237,224,0.5);
+text-decoration: none;
+transition: color 0.3s;
+}
+
+.footer-links a:hover { color: var(–gold); }
+
+.footer-copy {
+font-size: 0.65rem;
+color: rgba(245,237,224,0.3);
+letter-spacing: 0.1em;
+}
+
+/* ── MODAL ── */
+.modal-overlay {
+position: fixed; inset: 0;
+background: rgba(44,31,26,0.7);
+backdrop-filter: blur(8px);
+z-index: 999;
+display: none;
+align-items: center;
+justify-content: center;
+padding: 2rem;
+}
+
+.modal-overlay.open { display: flex; }
+
+.modal {
+background: var(–white);
+max-width: 480px;
+width: 100%;
+padding: 2.5rem;
+position: relative;
+}
+
+.modal-close {
+position: absolute; top: 1rem; right: 1rem;
+background: none; border: none;
+font-size: 1.4rem; cursor: pointer;
+color: var(–muted);
+transition: color 0.3s;
+}
+
+.modal-close:hover { color: var(–deep); }
+
+.modal h3 {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 1.6rem;
+font-weight: 400;
+color: var(–deep);
+margin-bottom: 0.4rem;
+}
+
+.modal-item-detail {
+font-size: 0.72rem;
+letter-spacing: 0.1em;
+color: var(–muted);
+margin-bottom: 1.5rem;
+}
+
+.modal form {
+display: flex; flex-direction: column; gap: 0.8rem;
+}
+
+.modal label {
+font-size: 0.62rem;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+color: var(–gold);
+display: block;
+margin-bottom: 0.3rem;
+}
+
+.modal input, .modal textarea, .modal select {
+width: 100%;
+border: 1px solid var(–blush);
+padding: 0.7rem 0.9rem;
+font-family: ‘Jost’, sans-serif;
+font-size: 0.85rem;
+outline: none;
+background: var(–cream);
+transition: border-color 0.3s;
+}
+
+.modal input:focus, .modal textarea:focus { border-color: var(–gold); }
+.modal textarea { height: 80px; resize: vertical; }
+
+.modal-submit {
+background: var(–deep);
+color: var(–champagne);
+border: none;
+padding: 0.85rem;
+font-family: ‘Jost’, sans-serif;
+font-size: 0.7rem;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+cursor: pointer;
+transition: background 0.3s;
+margin-top: 0.5rem;
+}
+
+.modal-submit:hover { background: var(–gold); }
+
+/* ── DIVIDER ── */
+.gold-divider {
+display: flex; align-items: center; gap: 1.5rem;
+margin: 2rem 0;
+}
+
+.gold-divider::before, .gold-divider::after {
+content: ‘’; flex: 1;
+height: 1px;
+background: var(–gold);
+opacity: 0.35;
+}
+
+.gold-divider span {
+font-size: 0.65rem;
+letter-spacing: 0.4em;
+text-transform: uppercase;
+color: var(–gold);
+}
+
+/* ── TESTIMONIALS ── */
+#testimonials {
+background: var(–champagne);
+padding: 5rem 0;
+}
+
+.testimonials-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 2rem;
+margin-top: 3rem;
+}
+
+.testimonial {
+background: var(–white);
+padding: 2rem;
+position: relative;
+}
+
+.testimonial::before {
+content: ‘\201C’;
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 5rem;
+color: var(–blush);
+line-height: 0.8;
+display: block;
+margin-bottom: 0.5rem;
+}
+
+.testimonial p {
+font-family: ‘Cormorant Garamond’, serif;
+font-size: 1.05rem;
+font-style: italic;
+font-weight: 300;
+line-height: 1.7;
+color: var(–deep);
+margin-bottom: 1.2rem;
+}
+
+.testimonial-author {
+font-size: 0.65rem;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+color: var(–gold);
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeSlideIn {
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── MOBILE ── */
+@media (max-width: 900px) {
+nav { padding: 1rem 1.5rem; }
+.nav-links { display: none; }
+
+```
+.hero { grid-template-columns: 1fr; }
+.hero-left { padding: 4rem 2rem; min-height: 60vh; }
+.hero-right { padding: 3rem 2rem; }
+.hero-stat-group { grid-template-columns: 1fr 1fr; }
+
+.about-grid { grid-template-columns: 1fr; gap: 3rem; }
+.services-grid { grid-template-columns: 1fr; }
+.service-card.featured { grid-column: 1; display: flex; flex-direction: column; gap: 2rem; }
+.featured-right { border-left: none; border-top: 1px solid rgba(184,150,90,0.3); padding-left: 0; padding-top: 2rem; }
+
+.catalogue-grid { grid-template-columns: repeat(2, 1fr); }
+.booking-grid { grid-template-columns: 1fr; gap: 3rem; }
+.form-row { grid-template-columns: 1fr; }
+.testimonials-grid { grid-template-columns: 1fr; }
+.container { padding: 0 1.5rem; }
+.services-header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+
+footer { flex-direction: column; align-items: flex-start; text-align: left; }
+```
+
+}
+</style>
+
+</head>
+<body>
+
+<!-- NAV -->
+
+<nav>
+  <a href="#" class="nav-logo">
+    Colour Wardrobe by Geet
+    <span>The Wenlock Wardrobe · Shropshire</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#catalogue">Catalogue</a></li>
+    <li><a href="#testimonials">Stories</a></li>
+    <li><a href="#instagram">Reels</a></li>
+    <li><a href="#booking" class="nav-cta">Book Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Colour · Style · Confidence</p>
+    <h1 class="hero-title">
+      Discover Your<br>
+      <em>True Colours</em>
+    </h1>
+    <p class="hero-desc">
+      Expert colour analysis, body shape styling and personal wardrobe consultation — in Shropshire, across the UK, and globally online. Transforming how women see themselves, one season at a time.
+    </p>
+    <div class="hero-btns">
+      <a href="#services" class="btn-primary">Explore Services</a>
+      <a href="#booking" class="btn-outline">Book a Consultation</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-right-pattern"></div>
+    <div class="hero-shop-name">Wenlock</div>
+    <div class="hero-stat-group">
+      <div class="hero-stat">
+        <div class="hero-stat-num">20+</div>
+        <div class="hero-stat-label">Years of Community Presence</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">4</div>
+        <div class="hero-stat-label">Signature Services</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">∞</div>
+        <div class="hero-stat-label">Virtual — Global Reach</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">100%</div>
+        <div class="hero-stat-label">Personalised to You</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image-frame">
+        <div class="about-image-placeholder">
+          Your portrait photo<br>will shine here
+        </div>
+        <div class="about-badge">
+          <span class="about-badge-num">20+</span>
+          <span class="about-badge-text">Years in Fashion</span>
+        </div>
+      </div>
+      <div class="about-text">
+        <p class="section-label">About Geet</p>
+        <h2 class="section-title">Where <em>Science</em> Meets Style</h2>
+        <div class="gold-divider"><span>Est. Shropshire</span></div>
+        <p>
+          The Wenlock Wardrobe has been a beloved part of the Shropshire community for over two decades — a multi-generational boutique where <strong>fashion meets individuality</strong>. At the heart of it is Geet, a specialist in colour analysis, body shape styling and wardrobe transformation.
+        </p>
+        <p>
+          Trained in the science of undertone theory and seasonal colour frameworks, Geet brings both <strong>analytical precision and warm, personal guidance</strong> to every consultation. Whether you're navigating Western fashion, cultural dress, or a blend of both — her approach celebrates every woman's unique palette.
+        </p>
+        <p>
+          Based in Shropshire for in-person sessions, Geet travels nationally for group consultations and offers <strong>virtual colour analysis to clients worldwide</strong> — so wherever you are, your best colours are within reach.
+        </p>
+        <div class="about-tags">
+          <span class="tag">Seasonal Colour Analysis</span>
+          <span class="tag">12-Season System</span>
+          <span class="tag">Body Shape Styling</span>
+          <span class="tag">Wardrobe Editing</span>
+          <span class="tag">Virtual Consultations</span>
+          <span class="tag">Cultural Wardrobes</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+
+<section id="services">
+  <div class="container">
+    <div class="services-header">
+      <div>
+        <p class="section-label">What I Offer</p>
+        <h2 class="section-title">Signature <em>Services</em></h2>
+      </div>
+      <a href="#booking" class="btn-primary">Book Any Service</a>
+    </div>
+    <div class="services-grid">
+
+```
+  <!-- Service 1 -->
+  <div class="service-card">
+    <div class="service-number">01</div>
+    <div class="service-name">Colour Analysis</div>
+    <div class="service-tagline">Find Your Seasonal Palette</div>
+    <p class="service-desc">
+      Discover the colours that naturally harmonise with your skin tone, eye colour and hair — using the 12-season colour system. You'll leave knowing exactly which hues to wear and which to avoid, making shopping and getting dressed effortless.
+    </p>
+    <ul class="service-includes">
+      <li>Full seasonal palette assessment</li>
+      <li>Undertone & contrast analysis</li>
+      <li>Personalised colour fan to keep</li>
+      <li>Shopping guidance & colour card</li>
+      <li>Available in Shropshire & virtually</li>
+    </ul>
+    <a href="#booking" class="service-link">Book This Service</a>
+  </div>
+
+  <!-- Service 2 -->
+  <div class="service-card">
+    <div class="service-number">02</div>
+    <div class="service-name">Body Shape Analysis & Styling</div>
+    <div class="service-tagline">Dress Your Unique Shape</div>
+    <p class="service-desc">
+      Understanding your body's natural proportions is the key to dressing with confidence. Geet's body shape analysis identifies your silhouette and shows you exactly which styles, cuts and fits will make you look and feel your absolute best.
+    </p>
+    <ul class="service-includes">
+      <li>Body shape identification</li>
+      <li>Proportion & balance guidance</li>
+      <li>Style & cut recommendations</li>
+      <li>Works with all body types & ages</li>
+      <li>Cultural wardrobe considerations</li>
+    </ul>
+    <a href="#booking" class="service-link">Book This Service</a>
+  </div>
+
+  <!-- Service 3 -->
+  <div class="service-card">
+    <div class="service-number">03</div>
+    <div class="service-name">Virtual Colour Consultation</div>
+    <div class="service-tagline">Global · Online · Personal</div>
+    <p class="service-desc">
+      Can't visit Shropshire? Your personal colour consultation comes to you — wherever you are in the world. Via video call, Geet analyses your colouring and delivers the same thorough, personalised experience as an in-person session.
+    </p>
+    <ul class="service-includes">
+      <li>Full virtual colour analysis</li>
+      <li>Digital seasonal palette delivered</li>
+      <li>Suitable for all global clients</li>
+      <li>Flexible scheduling across time zones</li>
+      <li>Follow-up support included</li>
+    </ul>
+    <a href="#booking" class="service-link">Book This Service</a>
+  </div>
+
+  <!-- Service 4 — Featured -->
+  <div class="service-card featured">
+    <div>
+      <div class="service-number">04</div>
+      <div class="service-name">The Experience — Events & Weddings</div>
+      <div class="service-tagline">A Colour Analysis Experience for Your Guests</div>
+      <p class="service-desc">
+        Bring something truly memorable to your wedding or corporate event. Geet offers an elegant colour analysis experience — a bespoke booth or pop-up where guests receive their own seasonal colour reading. A beautiful, interactive, and genuinely transformative addition to any special occasion.
+      </p>
+      <ul class="service-includes">
+        <li>Bespoke colour experience booth</li>
+        <li>Individual mini-readings for guests</li>
+        <li>Perfect for weddings, hen parties & corporate events</li>
+        <li>Travels nationally across the UK</li>
+        <li>Fully tailored to your event aesthetic</li>
+      </ul>
+      <a href="#booking" class="service-link">Enquire About This Experience</a>
+    </div>
+    <div class="featured-right">
+      <p>"Imagine your wedding guests leaving with the gift of knowing their true colours — a memory that lasts long after the day itself."</p>
+      <div class="featured-detail">
+        This unique experience service is ideal for event planners, wedding coordinators and hosts who want to offer something extraordinary. Geet works closely with you to design a colour experience that fits seamlessly into your event — from intimate gatherings to large celebrations.<br><br>
+        <strong style="color: var(--gold); font-weight: 400;">Available across the UK · Contact for bespoke pricing</strong>
+      </div>
+    </div>
+  </div>
+
+</div>
+```
+
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+
+<section id="testimonials">
+  <div class="container">
+    <div style="text-align:center; margin-bottom: 1rem;">
+      <p class="section-label">Client Stories</p>
+      <h2 class="section-title">Transformations <em>in Their Words</em></h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <p>Having my colours done by Geet was genuinely life-changing. I understood for the first time why some clothes made me look tired and others made me glow. I've never shopped the same way since.</p>
+        <div class="testimonial-author">— Sarah M., Shrewsbury</div>
+      </div>
+      <div class="testimonial">
+        <p>I was sceptical about colour analysis but Geet made it so logical and personal. She also understood my South Asian wardrobe — she knew exactly how to work with my salwar suits and occasion wear.</p>
+        <div class="testimonial-author">— Priya K., Birmingham</div>
+      </div>
+      <div class="testimonial">
+        <p>We had Geet at our corporate away-day and it was the highlight of the event. Every single woman left buzzing. She is warm, expert and utterly engaging. We're booking her again.</p>
+        <div class="testimonial-author">— Joanna T., Event Planner</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATALOGUE -->
+
+<section id="catalogue">
+  <div class="container">
+    <div class="catalogue-header">
+      <p class="section-label">The Boutique</p>
+      <h2 class="section-title">Browse the <em>Collection</em></h2>
+      <div class="catalogue-note">
+        ✦ Enquire about availability · No online purchasing · All items in-store at Shropshire
+      </div>
+    </div>
+    <div class="catalogue-grid">
+      <div class="catalogue-item">
+        <div class="catalogue-item-img">Add your<br>product photo</div>
+        <div class="catalogue-item-info">
+          <div class="catalogue-item-name">Heritage Longline Jacket</div>
+          <div class="catalogue-item-detail">Available in multiple colours · Sizes 10–22</div>
+          <button class="catalogue-enquire" onclick="openModal('Heritage Longline Jacket', 'Multiple colours · Sizes 10–22')">Enquire / Check Availability</button>
+        </div>
+      </div>
+      <div class="catalogue-item">
+        <div class="catalogue-item-img">Add your<br>product photo</div>
+        <div class="catalogue-item-info">
+          <div class="catalogue-item-name">Meadow Jacket</div>
+          <div class="catalogue-item-detail">Spring / Summer · Sizes 10–20</div>
+          <button class="catalogue-enquire" onclick="openModal('Meadow Jacket', 'Spring / Summer · Sizes 10–20')">Enquire / Check Availability</button>
+        </div>
+      </div>
+      <div class="catalogue-item">
+        <div class="catalogue-item-img">Add your<br>product photo</div>
+        <div class="catalogue-item-info">
+          <div class="catalogue-item-name">Flora Waistcoat</div>
+          <div class="catalogue-item-detail">Boho chic · Sizes 8–20</div>
+          <button class="catalogue-enquire" onclick="openModal('Flora Waistcoat', 'Boho chic · Sizes 8–20')">Enquire / Check Availability</button>
+        </div>
+      </div>
+      <div class="catalogue-item">
+        <div class="catalogue-item-img">Add your<br>product photo</div>
+        <div class="catalogue-item-info">
+          <div class="catalogue-item-name">New Season Arrival</div>
+          <div class="catalogue-item-detail">Ask in store · Various styles</div>
+          <button class="catalogue-enquire" onclick="openModal('New Season Arrival', 'Various styles · Ask in store')">Enquire / Check Availability</button>
+        </div>
+      </div>
+      <div class="catalogue-item">
+        <div class="catalogue-item-img">Add your<br>product photo</div>
+        <div class="catalogue-item-info">
+          <div class="catalogue-item-name">Your Item Here</div>
+          <div class="catalogue-item-detail">Add your stock as needed</div>
+          <button class="catalogue-enquire" onclick="openModal('Item', '')">Enquire / Check Availability</button>
+        </div>
+      </div>
+      <div class="catalogue-item">
+        <div class="catalogue-item-img">Add your<br>product photo</div>
+        <div class="catalogue-item-info">
+          <div class="catalogue-item-name">Your Item Here</div>
+          <div class="catalogue-item-detail">Add your stock as needed</div>
+          <button class="catalogue-enquire" onclick="openModal('Item', '')">Enquire / Check Availability</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING / CONTACT -->
+
+<section id="booking">
+  <div class="container">
+    <div class="booking-grid">
+      <div class="booking-left">
+        <p class="section-label">Book a Consultation</p>
+        <h2 class="section-title" style="color:var(--champagne);">Begin Your <em style="color:var(--blush);">Transformation</em></h2>
+        <p>
+          Whether you're booking an in-person session in Shropshire, arranging a virtual consultation from anywhere in the world, or enquiring about an event experience — get in touch and Geet will be in contact within 24 hours.
+        </p>
+        <div class="contact-info">
+          <div class="contact-row">
+            <span class="contact-row-label">Phone</span>
+            <span>01952 728071</span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-row-label">Email</span>
+            <span>thewenlockwardrobe@yahoo.com</span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-row-label">Location</span>
+            <span>Much Wenlock, Shropshire</span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-row-label">Virtual</span>
+            <span>Available Worldwide</span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-row-label">Instagram</span>
+            <span>@thewenlockwardrobe</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <form class="booking-form" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" placeholder="Your first name" required>
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" placeholder="Your last name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="your@email.com" required>
+          </div>
+          <div class="form-group">
+            <label>Phone (optional)</label>
+            <input type="tel" placeholder="+44 ...">
+          </div>
+          <div class="form-group">
+            <label>Service of Interest</label>
+            <select required>
+              <option value="" disabled selected>Select a service</option>
+              <option>Colour Analysis — In Person (Shropshire)</option>
+              <option>Virtual Colour Analysis — Online</option>
+              <option>Body Shape Analysis & Styling</option>
+              <option>Group / Corporate Consultation</option>
+              <option>Wedding / Event Experience</option>
+              <option>Wardrobe Styling Session</option>
+              <option>General Enquiry</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Tell Me About You & Your Goals</label>
+            <textarea placeholder="What are you hoping to discover or achieve? Any upcoming events? Tell me anything that will help me prepare for you..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send My Enquiry →</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTAGRAM -->
+
+<section id="instagram" style="background: var(--cream); padding: 6rem 0;">
+  <div class="container">
+    <div style="text-align:center; margin-bottom: 3rem;">
+      <p class="section-label">Follow Along</p>
+      <h2 class="section-title">Watch Geet <em>in Action</em></h2>
+      <p style="font-size:0.9rem; font-weight:300; color:var(--muted); margin-top:1rem; max-width:500px; margin-left:auto; margin-right:auto; line-height:1.8;">
+        See real colour analysis sessions, styling transformations and expert tips — straight from the boutique and beyond.
+      </p>
+    </div>
+
+```
+<div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; justify-items:center; margin-bottom: 2.5rem;">
+
+  <!-- Reel 1 -->
+  <div style="border: 1px solid var(--blush); background: var(--white); padding: 1rem; max-width:360px; width:100%;">
+    <blockquote class="instagram-media"
+      data-instgrm-permalink="https://www.instagram.com/reel/DXJxyHciK5F/"
+      data-instgrm-version="14"
+      style="background:#FFF; border:0; margin:0; max-width:100%; min-width:326px; padding:0; width:100%;">
+      <div style="padding:16px; text-align:center;">
+        <a href="https://www.instagram.com/reel/DXJxyHciK5F/" target="_blank"
+          style="color:var(--gold); font-family:'Jost',sans-serif; font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; text-decoration:none;">
+          ▶ View Reel on Instagram
+        </a>
+      </div>
+    </blockquote>
+  </div>
+
+  <!-- Reel 2 -->
+  <div style="border: 1px solid var(--blush); background: var(--white); padding: 1rem; max-width:360px; width:100%;">
+    <blockquote class="instagram-media"
+      data-instgrm-permalink="https://www.instagram.com/reel/DXOaeOlCARE/"
+      data-instgrm-version="14"
+      style="background:#FFF; border:0; margin:0; max-width:100%; min-width:326px; padding:0; width:100%;">
+      <div style="padding:16px; text-align:center;">
+        <a href="https://www.instagram.com/reel/DXOaeOlCARE/" target="_blank"
+          style="color:var(--gold); font-family:'Jost',sans-serif; font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; text-decoration:none;">
+          ▶ View Reel on Instagram
+        </a>
+      </div>
+    </blockquote>
+  </div>
+
+  <!-- Reel 3 -->
+  <div style="border: 1px solid var(--blush); background: var(--white); padding: 1rem; max-width:360px; width:100%;">
+    <blockquote class="instagram-media"
+      data-instgrm-permalink="https://www.instagram.com/reel/DW022pXiOFi/"
+      data-instgrm-version="14"
+      style="background:#FFF; border:0; margin:0; max-width:100%; min-width:326px; padding:0; width:100%;">
+      <div style="padding:16px; text-align:center;">
+        <a href="https://www.instagram.com/reel/DW022pXiOFi/" target="_blank"
+          style="color:var(--gold); font-family:'Jost',sans-serif; font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; text-decoration:none;">
+          ▶ View Reel on Instagram
+        </a>
+      </div>
+    </blockquote>
+  </div>
+
+</div>
+
+<!-- Follow button -->
+<div style="text-align:center; margin-top:2rem;">
+  <a href="https://www.instagram.com/thewenlockwardrobe/" target="_blank"
+    style="display:inline-flex; align-items:center; gap:0.6rem; background:var(--deep); color:var(--champagne); padding:0.9rem 2rem; font-family:'Jost',sans-serif; font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; text-decoration:none; transition:background 0.3s;"
+    onmouseover="this.style.background='var(--gold)'"
+    onmouseout="this.style.background='var(--deep)'">
+    ✦ Follow @thewenlockwardrobe on Instagram
+  </a>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- Instagram embed script -->
+
+<script async src="//www.instagram.com/embed.js"></script>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="footer-logo">
+    Colour Wardrobe by Geet
+    <span>The Wenlock Wardrobe · Shropshire · Est. 20+ Years</span>
+  </div>
+  <ul class="footer-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#catalogue">Catalogue</a></li>
+    <li><a href="#booking">Contact</a></li>
+  </ul>
+  <div class="footer-copy">© 2025 Colour Wardrobe by Geet · thewenlockwardrobe.co.uk</div>
+</footer>
+
+<!-- ENQUIRY MODAL -->
+
+<div class="modal-overlay" id="modalOverlay" onclick="closeModalOnOverlay(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <h3 id="modalItemName">Item Name</h3>
+    <div class="modal-item-detail" id="modalItemDetail">Details</div>
+    <form onsubmit="handleModalSubmit(event)">
+      <div>
+        <label>Your Name</label>
+        <input type="text" placeholder="Your name" required>
+      </div>
+      <div>
+        <label>Email or Phone</label>
+        <input type="text" placeholder="Best way to reach you" required>
+      </div>
+      <div>
+        <label>Your Size</label>
+        <input type="text" placeholder="e.g. Size 14, or UK 14">
+      </div>
+      <div>
+        <label>Your Question or Request</label>
+        <textarea placeholder="Is this available in my size? Do you have it in another colour?"></textarea>
+      </div>
+      <button type="submit" class="modal-submit">Send Enquiry</button>
+    </form>
+  </div>
+</div>
+
+<script>
+  function openModal(name, detail) {
+    document.getElementById('modalItemName').textContent = name;
+    document.getElementById('modalItemDetail').textContent = detail;
+    document.getElementById('modalOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('modalOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function closeModalOnOverlay(e) {
+    if (e.target === document.getElementById('modalOverlay')) closeModal();
+  }
+
+  function handleModalSubmit(e) {
+    e.preventDefault();
+    alert('Thank you for your enquiry! Geet will be in touch with you shortly.');
+    closeModal();
+    e.target.reset();
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    alert('Thank you! Your enquiry has been received. Geet will respond within 24 hours.');
+    e.target.reset();
+  }
+
+  // Smooth nav highlight
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 100) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current ? 'var(--gold)' : '';
+    });
+  });
+</script>
+
+</body>
+</html>
